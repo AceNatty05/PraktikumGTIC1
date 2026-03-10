@@ -1,3 +1,9 @@
+/*
+ * Tugas 1_2
+ * Nama  : Agil Yudis Wibawa
+ * NIM   : 24060124120045
+ */
+
 #include <GL/glut.h>
 
 void display() {
