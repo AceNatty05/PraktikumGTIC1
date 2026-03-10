@@ -1,13 +1,14 @@
-#include <GLUT/glut.h>
+#include <GL/glut.h> 
 
 void point(void) { 
 	glClear (GL_COLOR_BUFFER_BIT);
 	glPointSize(10.0f);
 	glBegin(GL_POINTS);
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f( 0.0f, 0.8f, 0.9f);
+		glColor3f(0.0f, 0.0f, 0.0f);  // setting warna titik(R, G, B)
+		glVertex3f( 0.0f, 0.0f, 0.0f);     // Koordinat titiknya (x,y,z)
 	glEnd(); 
 	glFlush();
+
 } 
 
 int main(int argc, char* argv[]) { 
@@ -17,7 +18,7 @@ int main(int argc, char* argv[]) {
 	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGBA);
 	glutCreateWindow("Titik");
 	glutDisplayFunc (point);
-	glClearColor(0.0f, 0.0f, 1.0f, 1.0f); 
+	glClearColor(1.0f, 0.75f, 0.8f, 1.0f);  
 	glutMainLoop();
 	return 0;
 }
