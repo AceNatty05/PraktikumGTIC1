@@ -1,15 +1,15 @@
-# Project: Project1
+# Project: TesAsprak
 # Makefile created by Dev-C++ 5.7.1
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = no3.o
-LINKOBJ  = no3.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -mwindows -lglut32 -lglu32 -lopengl32 -lwinmm -lgdi32
-INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
-CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
-BIN      = pertemuan1_no3.exe
+OBJ      = TesAsprak.o
+LINKOBJ  = TesAsprak.o
+LIBS     = -L"D:/Aplikasi/Dev-Cpp/MinGW32/lib" -L"D:/Aplikasi/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -mwindows -lglut32 -lglu32 -lopengl32 -lwinmm -lgdi32
+INCS     = -I"D:/Aplikasi/Dev-Cpp/MinGW32/include" -I"D:/Aplikasi/Dev-Cpp/MinGW32/mingw32/include" -I"D:/Aplikasi/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"D:/Aplikasi/Dev-Cpp/MinGW32/include" -I"D:/Aplikasi/Dev-Cpp/MinGW32/mingw32/include" -I"D:/Aplikasi/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"D:/Aplikasi/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = TesAsprak.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) -DGLUT_STATIC
 RM       = rm.exe -f
@@ -24,5 +24,5 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-no3.o: no3.cpp
-	$(CPP) -c no3.cpp -o no3.o $(CXXFLAGS)
+TesAsprak.o: TesAsprak.cpp
+	$(CPP) -c TesAsprak.cpp -o TesAsprak.o $(CXXFLAGS)
