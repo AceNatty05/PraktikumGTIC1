@@ -1,4 +1,5 @@
 #include <GL/glut.h>
+#include <math.h>
 
 void linestrip(){
 	glBegin(GL_LINE_STRIP);
@@ -102,6 +103,23 @@ void quadstrip2(){
 	glVertex2f(0.70+u,0.05+v);
 	glEnd();
 }
+void lineloop(){
+	float PI,r,x,y;
+	double angel;
+	int i,segment;
+	PI = 3.14;
+	segment = 100;
+	r = 0.5;
+	glBegin(GL_LINE_LOOP);
+	glColor3f(0.0f,0.0f,0.0f);
+	for(i=0;i<segment;i++){
+		angel = 2.0 * PI * i / segment;
+		x = r * cos(angel);
+		y = r * sin(angel);
+		glVertex2f(x,y);
+	}
+	glEnd();
+}
 void jendela(){
 	glClear(GL_COLOR_BUFFER_BIT);
 	glClearColor(0.0f,0.0f,0.0f,0.0f);
@@ -112,6 +130,7 @@ void jendela(){
 	quads2();
 	quadstrip();
 	linestrip();
+	lineloop();
 	glFlush();
 }
 int main(int argc, char * argv[]){
