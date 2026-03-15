@@ -1,3 +1,7 @@
+// Nama     : Azka Aqylla Maulana
+// NIM      : 24060124140195
+// Lab      : C1
+
 #include <GLUT/glut.h>
 
 void drawGrid() {

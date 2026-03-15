@@ -1,3 +1,7 @@
+// Nama     : Azka Aqylla Maulana
+// NIM      : 24060124140195
+// Lab      : C1
+
 #include <GLUT/glut.h>
 #include <cmath>
 
@@ -117,6 +121,40 @@ void drawRectangleOutline(float x_bottom_left, float y_bottom_left, float x_top_
         glVertex2f(x_bottom_left, y_top_right);     // top left corner
         glVertex2f(x_top_right, y_top_right);       // top right corner
         glVertex2f(x_top_right, y_bottom_left);     // bottom right corner
+    glEnd();
+}
+
+// triangle filled
+void drawTriangleFilled(float x1, float y1, float x2, float y2, float x3, float y3, float red, float green, float blue){
+    float red_gl = red / 255.0f;
+
+    float green_gl = green / 255.0f;
+
+    float blue_gl = blue / 255.0f;
+
+    glColor3f(red_gl, green_gl, blue_gl);
+
+    glBegin(GL_TRIANGLES);
+        glVertex2f(x1, y1);
+        glVertex2f(x2, y2);
+        glVertex2f(x3, y3);
+    glEnd();
+}
+
+// triangle outline
+void drawTriangleOutline(float x1, float y1, float x2, float y2, float x3, float y3, float red, float green, float blue){
+    float red_gl = red / 255.0f;
+
+    float green_gl = green / 255.0f;
+
+    float blue_gl = blue / 255.0f;
+
+    glColor3f(red_gl, green_gl, blue_gl);
+
+    glBegin(GL_LINE_LOOP);
+        glVertex2f(x1, y1);
+        glVertex2f(x2, y2);
+        glVertex2f(x3, y3);
     glEnd();
 }
 
