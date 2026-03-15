@@ -158,6 +158,88 @@ void drawTriangleOutline(float x1, float y1, float x2, float y2, float x3, float
     glEnd();
 }
 
+// curve filled with colour
+void drawCurveFilled(float centre_x, float centre_y, float radius, float start_deg, float end_deg, int segments, float red, float green, float blue){
+    float red_gl = red / 255.0f;
+
+    float green_gl = green / 255.0f;
+
+    float blue_gl = blue / 255.0f;
+
+    glColor3f(red_gl, green_gl, blue_gl);
+
+    glBegin(GL_POLYGON);
+        glVertex2f(centre_x, centre_y); 
+        for (int i = 0; i <= segments; i++){
+            float progress = (float)i / (float)segments;
+            
+            float angle_deg = start_deg + (progress * (end_deg - start_deg));
+            
+            float theta = angle_deg * M_PI / 180.0f;
+
+            glVertex2f(centre_x + (radius * cosf(theta)), centre_y + (radius * sinf(theta)));
+        }
+    glEnd();
+}
+
+// curve outline
+void drawCurveOutline(float centre_x, float centre_y, float radius, float start_deg, float end_deg, int segments, float red, float green, float blue){
+    float red_gl = red / 255.0f;
+    
+    float green_gl = green / 255.0f;
+    
+    float blue_gl = blue / 255.0f;
+
+    glColor3f(red_gl, green_gl, blue_gl);
+
+    glBegin(GL_LINE_STRIP);
+        for (int i = 0; i <= segments; i++){
+            float progress = (float)i / (float)segments;
+    
+            float angle_deg = start_deg + (progress * (end_deg - start_deg));
+    
+            float theta = angle_deg * M_PI / 180.0f;
+
+            glVertex2f(centre_x + (radius * cosf(theta)), centre_y + (radius * sinf(theta)));
+        }
+    glEnd();
+}
+
+// custom quad filled (for slanted shapes)
+void drawQuadFilled(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, float red, float green, float blue){
+    float red_gl = red / 255.0f;
+    
+    float green_gl = green / 255.0f;
+    
+    float blue_gl = blue / 255.0f;
+
+    glColor3f(red_gl, green_gl, blue_gl);
+
+    glBegin(GL_POLYGON);
+        glVertex2f(x1, y1);
+        glVertex2f(x2, y2);
+        glVertex2f(x3, y3);
+        glVertex2f(x4, y4);
+    glEnd();
+}
+
+// line with thickness
+void drawLine(float x1, float y1, float x2, float y2, float red, float green, float blue, float thickness){
+    float red_gl = red / 255.0f;
+    
+    float green_gl = green / 255.0f;
+    
+    float blue_gl = blue / 255.0f;
+
+    glColor3f(red_gl, green_gl, blue_gl);
+    glLineWidth(thickness);
+
+    glBegin(GL_LINES);
+        glVertex2f(x1, y1);
+        glVertex2f(x2, y2);
+    glEnd();
+}
+
 // this is only for setting the canvas so that i can do the range from -10 to 10 since i dont want to do decimal point thingy
 void init(){
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
