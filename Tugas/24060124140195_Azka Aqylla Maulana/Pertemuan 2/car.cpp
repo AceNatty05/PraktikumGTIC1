@@ -97,6 +97,8 @@ void drawRectangleFilled(float x_bottom_left, float y_bottom_left, float x_top_r
     float green_gl = green / 255.0f;
 
     float blue_gl = blue / 255.0f;
+
+    glColor3f(red_gl, green_gl, blue_gl);
     
     glBegin(GL_POLYGON);
         glVertex2f(x_bottom_left, y_bottom_left);   // bottom left corner
@@ -254,6 +256,32 @@ void display(){
 
     // just for helper that can be toggled off by removing it or //
     drawGrid();
+
+    // i'm gonna try making a ford transit honestly
+    // vans are supposedly easier to make than a sedan?
+
+    // base of the car
+    // base colour should be 61, 64, 66
+    drawRectangleFilled(-7, 0, 4, 5, 61, 64, 66);
+    drawTriangleFilled(4, 5, 4, 2, 7, 2, 61, 64, 66);
+    drawRectangleFilled(4, 0, 7, 2, 61, 64, 66);
+    drawCurveFilled(7, 1, 1, 90, -90, 100, 61, 64, 66);
+
+    // wheels
+    // front wheel
+    drawCircleFilled(5, 0, 1, 100, 0, 0, 0);
+
+    // rear wheel
+    drawCircleFilled(-4, 0, 1, 100, 0, 0, 0);
+
+    // windows
+
+    // door
+    // front door
+
+    // sliding back door
+
+    // lights and turn indicator if i get the chance
 
     glFlush();
 }
