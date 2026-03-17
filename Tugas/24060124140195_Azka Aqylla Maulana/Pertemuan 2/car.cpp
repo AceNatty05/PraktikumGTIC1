@@ -242,6 +242,14 @@ void drawLine(float x1, float y1, float x2, float y2, float red, float green, fl
     glEnd();
 }
 
+// clouds
+void drawCloud(float x, float y) {
+    // colour is set to white
+    drawCircleFilled(x, y, 1.2, 30, 255, 255, 255);                 // centre puff
+    drawCircleFilled(x - 1.0f, y - 0.3f, 0.8, 30, 255, 255, 255);   // left puff
+    drawCircleFilled(x + 1.0f, y - 0.3f, 0.9, 30, 255, 255, 255);   // right puff
+}
+
 // this is only for setting the canvas so that i can do the range from -10 to 10 since i dont want to do decimal point thingy
 void init(){
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
@@ -254,35 +262,71 @@ void init(){
 void display(){
     glClear(GL_COLOR_BUFFER_BIT);
 
-    // just for helper that can be toggled off by removing it or //
+    // the sky
+        
+        // base sky
+        drawRectangleFilled(-10, -3, 10, 10, 135, 206, 235);
+
+        // cloud
+        glPushMatrix();
+        // it's gonna start from off the screen
+            for (float x = -12.0f; x <= 12.0f; x += 6.0f) {
+                float yOffset = 7.0f + (sinf(x) * 1.5f); 
+                drawCloud(x, yOffset);
+            }
+        glPopMatrix();
+
+    // road
+
+        // just a slab of greyish matter for the road base
+        drawRectangleFilled(-10, -10, 10, -3, 70, 70, 70);
+
+        // road lining
+        glPushMatrix();
+            glTranslatef(-9.0f, -6.5f, 0.0f); 
+            for (int i = 0; i < 5; i++) {
+                drawRectangleFilled(0, 0, 2, 0.2, 255, 255, 255);
+                glTranslatef(4.0f, 0.0f, 0.0f);
+            }
+        glPopMatrix();
+
+    // trees
+    glPushMatrix();
+        glTranslatef(-8.0f, -3.0f, 0.0f); 
+        drawRectangleFilled(-0.2, 0, 0.2, 6.0, 101, 67, 33); 
+        drawCircleFilled(0, 6.0, 2.0, 30, 34, 139, 34);      
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(8.0f, -3.0f, 0.0f); 
+        drawRectangleFilled(-0.2, 0, 0.2, 6.0, 101, 67, 33); 
+        drawCircleFilled(0, 6.0, 2.0, 30, 34, 139, 34);      
+    glPopMatrix();
+
+    // car
+    glPushMatrix();
+        // changing the cra's posisint
+        glTranslatef(0.0f, -4.0f, 0.0f); 
+
+        // base car
+        drawRectangleFilled(-7, 0, 4, 5, 220, 220, 220);
+        drawTriangleFilled(4, 5, 4, 2, 7, 2, 220, 220, 220);
+        drawRectangleFilled(4, 0, 7, 2, 220, 220, 220);
+        drawCurveFilled(7, 1, 1, 90, -90, 100, 220, 220, 220);
+        
+        // wheels
+        // front wheel
+        drawCircleFilled(5, 0, 1, 100, 0, 0, 0); 
+
+        // rear wheel
+        drawCircleFilled(-4, 0, 1, 100, 0, 0, 0);
+
+        // windows
+        drawTriangleFilled(4, 4, 4, 2, 6, 2, 168, 204, 215);
+
+    glPopMatrix();
+
     drawGrid();
-
-    // i'm gonna try making a ford transit honestly
-    // vans are supposedly easier to make than a sedan?
-
-    // base of the car
-    // base colour should be 61, 64, 66
-    drawRectangleFilled(-7, 0, 4, 5, 61, 64, 66);
-    drawTriangleFilled(4, 5, 4, 2, 7, 2, 61, 64, 66);
-    drawRectangleFilled(4, 0, 7, 2, 61, 64, 66);
-    drawCurveFilled(7, 1, 1, 90, -90, 100, 61, 64, 66);
-
-    // wheels
-    // front wheel
-    drawCircleFilled(5, 0, 1, 100, 0, 0, 0);
-
-    // rear wheel
-    drawCircleFilled(-4, 0, 1, 100, 0, 0, 0);
-
-    // windows
-
-    // door
-    // front door
-
-    // sliding back door
-
-    // lights and turn indicator if i get the chance
-
     glFlush();
 }
 
