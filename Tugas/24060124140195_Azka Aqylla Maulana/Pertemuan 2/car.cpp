@@ -326,7 +326,8 @@ void display(){
 
     glPopMatrix();
 
-    drawGrid();
+    // drawGrid();
+    
     glFlush();
 }
 
