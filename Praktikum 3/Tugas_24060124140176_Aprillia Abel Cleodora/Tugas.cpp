@@ -4,7 +4,7 @@
  *               yang terdiri dari lengan, telapak tangan, dan jari-jari.
  *               Setiap bagian dapat digerakkan menggunakan keyboard.
  * Pembuat     : Aprillia Abel Cleodora
- * Tanggal     : 19 Maret 2026
+ * Tanggal     : 22 Maret 2026
  */
  
 #include <windows.h>

@@ -3,7 +3,7 @@
  * Deskripsi   : Program OpenGL untuk menampilkan model tangan 3D sederhana
  *               dengan beberapa pose emoticon dan kontrol rotasi tampilan
  * Pembuat     : Aprillia Abel Cleodora
- * Tanggal     : 19 Maret 2026
+ * Tanggal     : 22 Maret 2026
  */
 
 #include <windows.h>
