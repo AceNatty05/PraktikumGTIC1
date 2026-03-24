@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int shoulder = 0, elbow = 0, wrist = 0;
-int finger = 0, thumb = 0;
+int f1 = 0, f2 = 0, f3 = 0, f4 = 0, thumb = 0; 
 int armRotY = 0;
 
 void Display(void) {
@@ -41,60 +41,84 @@ void Display(void) {
     glPopMatrix();
     glTranslatef(0.35f, 0.0f, 0.0f);
 
-    // finger 1
+    // finger 1 (Kelingking)
     glPushMatrix();
         glTranslatef(0.0f, 0.24f, 0.0f);
         // ruas 1
-        glRotatef(-(float)finger, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f1, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.165f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.33f, 0.11f, 0.11f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.33f, 0.11f, 0.11f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
         glTranslatef(0.165f, 0.0f, 0.0f);
         // ruas 2
-        glRotatef(-(float)finger * 0.7f, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f1 * 0.7f, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.13f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.26f, 0.094f, 0.094f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.26f, 0.094f, 0.094f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
     glPopMatrix();
 
-    // finger 2
+    // finger 2 (Jari Manis)
     glPushMatrix();
         glTranslatef(0.0f, 0.08f, 0.0f);
         // ruas 1
-        glRotatef(-(float)finger, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f2, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.165f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.33f, 0.11f, 0.11f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.33f, 0.11f, 0.11f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
         glTranslatef(0.165f, 0.0f, 0.0f);
         // ruas 2
-        glRotatef(-(float)finger * 0.7f, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f2 * 0.7f, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.13f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.26f, 0.094f, 0.094f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.26f, 0.094f, 0.094f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
     glPopMatrix();
 
-    // finger 3
+    // finger 3 (Jari Tengah)
     glPushMatrix();
         glTranslatef(0.0f, -0.08f, 0.0f);
         // ruas 1
-        glRotatef(-(float)finger, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f3, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.165f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.33f, 0.11f, 0.11f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.33f, 0.11f, 0.11f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
         glTranslatef(0.165f, 0.0f, 0.0f);
         // ruas 2
-        glRotatef(-(float)finger * 0.7f, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f3 * 0.7f, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.13f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.26f, 0.094f, 0.094f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.26f, 0.094f, 0.094f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
     glPopMatrix();
 
-    // finger 4
+    // finger 4 (Telunjuk)
     glPushMatrix();
         glTranslatef(0.0f, -0.24f, 0.0f);
         // ruas 1
-        glRotatef(-(float)finger, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f4, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.165f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.33f, 0.11f, 0.11f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.33f, 0.11f, 0.11f); 
+            glutWireCube(1.0f);
+        glPopMatrix();
         glTranslatef(0.165f, 0.0f, 0.0f);
         // ruas 2
-        glRotatef(-(float)finger * 0.7f, 0.0f, 1.0f, 0.0f);
+        glRotatef(-(float)f4 * 0.7f, 0.0f, 1.0f, 0.0f);
         glTranslatef(0.13f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.26f, 0.094f, 0.094f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.26f, 0.094f, 0.094f); 
+            glutWireCube(1.0f);
+        glPopMatrix();
     glPopMatrix();
 
     // thumb
@@ -103,12 +127,18 @@ void Display(void) {
         glRotatef(-75.0f + (float)thumb, 0.0f, 0.0f, 1.0f);
         // ruas 1
         glTranslatef(0.13f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.26f, 0.13f, 0.13f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.26f, 0.13f, 0.13f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
         glTranslatef(0.13f, 0.0f, 0.0f);
         // ruas 2
         glRotatef((float)thumb * 0.4f, 0.0f, 0.0f, 1.0f);
         glTranslatef(0.10f, 0.0f, 0.0f);
-        glPushMatrix(); glScalef(0.20f, 0.11f, 0.11f); glutWireCube(1.0f); glPopMatrix();
+        glPushMatrix(); 
+            glScalef(0.20f, 0.11f, 0.11f); 
+            glutWireCube(1.0f); 
+        glPopMatrix();
     glPopMatrix();
 
     glPopMatrix();
@@ -143,9 +173,15 @@ void Keyboard(unsigned char key, int x, int y) {
         case 'W': if (wrist > -70) wrist = (wrist - 5) % 360; break;
 
         /* Jari */
-        case 'f': if (finger < 80) finger += 5; break;
-        case 'F': if (finger > 0)  finger -= 5; break;
-
+        case 'f': 
+            if (f1 < 80) f1 += 5; if (f2 < 80) f2 += 5;
+            if (f3 < 80) f3 += 5; if (f4 < 80) f4 += 5;
+            break;
+        case 'F': 
+            if (f1 > 0) f1 -= 5;  if (f2 > 0) f2 -= 5;
+            if (f3 > 0) f3 -= 5;  if (f4 > 0) f4 -= 5;
+            break;
+            
         /* Ibu jari */
         case 't': if (thumb < 60)  thumb += 5; break;
         case 'T': if (thumb > -30) thumb -= 5; break;
