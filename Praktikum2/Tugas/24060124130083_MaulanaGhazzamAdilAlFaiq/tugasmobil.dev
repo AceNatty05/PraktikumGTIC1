@@ -1,6 +1,6 @@
 [Project]
-FileName=Pt2.dev
-Name=Pt2
+FileName=tugasmobil.dev
+Name=tugasmobil
 Type=0
 Ver=2
 ObjFiles=
@@ -28,7 +28,7 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0000000000000000000000000
+CompilerSettings=0000000000000000001000000
 UnitCount=1
 
 [VersionInfo]
@@ -51,9 +51,9 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=Pt2.cpp
+FileName=mobil.cpp
 CompileCpp=1
-Folder=Pt2
+Folder=tugasmobil
 Compile=1
 Link=1
 Priority=1000
